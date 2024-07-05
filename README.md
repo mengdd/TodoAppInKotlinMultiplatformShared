@@ -18,3 +18,8 @@ How to run for desktop:
 ```shell
 ./gradlew run
 ```
+
+## Features
+- [x] todo list in ui code
+- [ ] viewmodel
+- [ ] persist data in local database
