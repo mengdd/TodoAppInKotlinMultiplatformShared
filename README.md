@@ -21,5 +21,5 @@ How to run for desktop:
 
 ## Features
 - [x] todo list in ui code
-- [ ] viewmodel
+- [ ] viewmodel: https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html
 - [ ] persist data in local database

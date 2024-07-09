@@ -10,25 +10,26 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun App() {
+fun App(viewModel: TodoListViewModel = viewModel { TodoListViewModel() }) {
     MaterialTheme {
         Column(
             Modifier.fillMaxWidth().padding(8.dp),
             horizontalAlignment = Alignment.Start,
         ) {
-            val todoList = remember { mutableStateListOf<TodoItem>() }
+            val uiState by viewModel.uiState.collectAsState()
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -46,7 +47,7 @@ fun App() {
                 Button(modifier = Modifier.padding(8.dp),
                     onClick = {
                         if (text.isNotBlank()) {
-                            todoList.add(TodoItem(text))
+                            viewModel.addItem(text)
                         }
                         text = ""
                     }) {
@@ -58,7 +59,7 @@ fun App() {
                 Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.Start
             ) {
-                items(todoList) {
+                items(uiState.items) {
                     Text(
                         modifier = Modifier.padding(8.dp),
                         text = it.title,
