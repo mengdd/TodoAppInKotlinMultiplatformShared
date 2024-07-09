@@ -21,5 +21,9 @@ How to run for desktop:
 
 ## Features
 - [x] todo list in ui code
-- [ ] viewmodel: https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html
+- [x] viewmodel: https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html
 - [ ] persist data in local database
+- [ ] DI tool
+- [ ] complete and remove task
+- [ ] edit task detail
+  - navigation: https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html
