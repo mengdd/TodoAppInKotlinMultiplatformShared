@@ -12,7 +12,8 @@ class TodoListViewModel : ViewModel() {
     fun addItem(title: String) {
 
         _uiState.update { currentState ->
-            val newItem = TodoItem(title)
+            // todo
+            val newItem = TodoItem(title, title)
             val newList = currentState.items.toMutableList().apply {
                 add(newItem)
             }

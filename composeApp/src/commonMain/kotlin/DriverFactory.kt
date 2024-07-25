@@ -10,4 +10,5 @@ fun createDatabase(driverFactory: DriverFactory): Database {
     val database = Database(driver)
 
     // Do more work with the database (see below).
+    return database
 }
