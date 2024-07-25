@@ -23,6 +23,11 @@ How to run for desktop:
 - [x] todo list in ui code
 - [x] viewmodel: https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html
 - [ ] persist data in local database
+  - sqldelight: https://github.com/cashapp/sqldelight
+  - https://cashapp.github.io/sqldelight/2.0.2/multiplatform_sqlite/
+```shell
+./gradlew generateSqlDelightInterface
+```
 - [ ] DI tool
 - [ ] complete and remove task
 - [ ] edit task detail

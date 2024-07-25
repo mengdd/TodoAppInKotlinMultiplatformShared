@@ -1,0 +1,16 @@
+CREATE TABLE TodoItem (
+    id TEXT PRIMARY KEY NOT NULL,
+    title TEXT NOT NULL
+);
+
+insertTodo:
+INSERT INTO TodoItem(id, title) VALUES (?, ?);
+
+selectTodo:
+SELECT * FROM TodoItem WHERE id = ?;
+
+deleteTodo:
+DELETE FROM TodoItem WHERE id = ?;
+
+selectAllTodos:
+SELECT * FROM TodoItem;
